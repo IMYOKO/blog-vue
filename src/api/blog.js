@@ -6,6 +6,26 @@ class BlogApi extends BasicApi {
   login (data) {
     return this.post('/api/user/login', data)
   }
+  // 博客列表
+  blogList () {
+    return this.get(`/api/blog/list?isadmin=1`)
+  }
+  // 博客详情
+  blogDetail (id) {
+    return this.get(`/api/blog/detail?id=${id}`)
+  }
+  // 新增博客
+  addBlog (data) {
+    return this.post(`/api/blog/new`, data)
+  }
+  // 更新博客
+  updateBlog (id, data) {
+    return this.post(`/api/blog/update?id=${id}`, data)
+  }
+  // 删除博客
+  deleteBlog (id) {
+    return this.post(`/api/blog/delete?id=${id}`)
+  }
 }
 
 const blogApi =  new BlogApi()

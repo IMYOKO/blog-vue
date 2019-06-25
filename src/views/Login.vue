@@ -21,9 +21,10 @@ export default {
         username: this.username,
         password: this.password,
       }
-      console.log(data)
       this.SERVER.login(data).then(res => {
-        console.log(res)
+        if (res.data.code === 0) {
+          this.$router.push('/admin')
+        }
       })
     }
   }
