@@ -56,7 +56,7 @@ export default {
       this.$router.push({ path: '/updateBlog', query: { id }})
     },
     deleteBlog (id) {
-      console.log('删除')
+      console.log(id)
     }
   }
 }

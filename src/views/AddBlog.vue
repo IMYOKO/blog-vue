@@ -28,8 +28,8 @@ export default {
           { min: 0, max: 30, message: '长度在 0 到 30 个字符', trigger: 'blur' }
         ],
         content: [
-            { required: true, message: '请填写活动形式', trigger: 'blur' }
-          ]
+          { required: true, message: '请填写活动形式', trigger: 'blur' }
+        ]
       }
     }
   },
