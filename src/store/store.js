@@ -1,8 +1,6 @@
-import { getCookie } from '../assets/js/common'
-console.log(getCookie('userId'))
-console.log(document.cookie)
+// import { getCookie } from '../assets/js/common'
 const state = {
-  islogin: getCookie('userId') === null ?  false : true
+  islogin: localStorage.getItem('userId') === null ?  false : true
 }
 
 const getters = {

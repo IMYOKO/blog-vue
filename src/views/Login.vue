@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { getCookie } from '../assets/js/common'
 import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'login',
@@ -41,10 +42,12 @@ export default {
   },
   mounted () {
     if (this.islogin) {
-      console.log(this.islogin)
+      this.$message({
+        message: '您已登录！',
+        type: 'success'
+      });
       this.$router.push('/admin')
     }
-    console.log(this.islogin)
   },
   computed: {
     ...mapState(['islogin'])
@@ -52,14 +55,25 @@ export default {
   methods: {
     ...mapMutations(['setLogin']),
     submitForm () {
-      console.log(this.islogin)
       const data = {
         username: this.ruleForm.username,
         password: this.ruleForm.password,
       }
+      if (data.username == '') {
+        return false
+      }
+      if (data.password == '') {
+        return false
+      }
       this.SERVER.login(data).then(res => {
         if (res.data.code === 0) {
           this.setLogin(true)
+          this.$message({
+            message: res.data.message,
+            type: 'success'
+          });
+          localStorage.setItem('userId', res.data.data.id)
+          console.log(getCookie('userId'))
           this.$router.push('/admin')
         }
       })

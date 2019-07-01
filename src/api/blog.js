@@ -6,6 +6,10 @@ class BlogApi extends BasicApi {
   login (data) {
     return this.post('/api/user/login', data)
   }
+  // 用户登录
+  logout () {
+    return this.post('/api/user/logout', {})
+  }
   // 博客列表
   blogList () {
     return this.get(`/api/blog/list?isadmin=1`)
