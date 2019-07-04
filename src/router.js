@@ -12,6 +12,7 @@ const router = new Router({
     { path: '/login', name: 'login', component: () => import(/* webpackChunkName: "about" */ './views/Login.vue') },
     { path: '/admin', name: 'admin', meta: { login: true } , component: () => import(/* webpackChunkName: "about" */ './views/Admin.vue') },
     { path: '/addblog', name: 'addblog', meta: { login: true } , component: () => import(/* webpackChunkName: "about" */ './views/AddBlog.vue') },
+    { path: '/adduser', name: 'adduser', meta: { login: true } , component: () => import(/* webpackChunkName: "about" */ './views/AddUser.vue') },
     { path: '/updateblog', name: 'updateblog', meta: { login: true } , component: () => import(/* webpackChunkName: "about" */ './views/UpdateBlog.vue') }
   ]
 })

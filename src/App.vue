@@ -23,7 +23,9 @@
         </el-menu>
       </el-aside>
       <el-container>
-        <el-header>Header</el-header>
+        <el-header>
+          <Headers />
+        </el-header>
         <el-main>
           <router-view/>
         </el-main>
@@ -38,6 +40,16 @@
     <router-view/> -->
   </div>
 </template>
+
+<script>
+import Headers from './components/header'
+export default {
+  components: {
+    Headers
+  }
+}
+</script>
+
 
 <style lang="less">
 #app {

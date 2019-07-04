@@ -73,7 +73,6 @@ export default {
             type: 'success'
           });
           localStorage.setItem('userId', res.data.data.id)
-          console.log(getCookie('userId'))
           this.$router.push('/admin')
         }
       })

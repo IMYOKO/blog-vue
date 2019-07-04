@@ -1,6 +1,7 @@
 <template>
   <div class="admin">
     <el-button type="primary" @click="add">新增博客</el-button>
+    <el-button type="primary" @click="addUser">新增用户</el-button>
     <el-table
       :data="tableData"
       stripe
@@ -51,6 +52,9 @@ export default {
     },
     add () {
       this.$router.push('/addblog')
+    },
+    addUser () {
+      this.$router.push('/adduser')
     },
     editor (id) {
       this.$router.push({ path: '/updateBlog', query: { id }})

@@ -1,4 +1,5 @@
 import BasicApi from './index'
+import { Message } from 'element-ui'
 
 // 用户模块
 class BlogApi extends BasicApi {
@@ -6,9 +7,12 @@ class BlogApi extends BasicApi {
   login (data) {
     return this.post('/api/user/login', data)
   }
-  // 用户登录
+  // 退出登录
   logout () {
     return this.post('/api/user/logout', {})
+  }
+  addUser (data) {
+    return this.post('/api/user/new', data)
   }
   // 博客列表
   blogList () {
@@ -42,7 +46,11 @@ blogApi.$http.interceptors.response.use(response => {
     //   localStorage.removeItem('utoken')
     // }
     // Toast.error(response.data.message)
-    console.log(response.data.message)
+    const msg = response.data.message
+    Message({ message: msg, type: 'error' })
+    if (msg === '尚未登录') {
+      localStorage.removeItem('userId')
+    }
   }
   return response;
 }, error => {
