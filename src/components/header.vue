@@ -16,7 +16,6 @@ export default {
     ...mapMutations(['setLogin']),
     logout() {
       this.SERVER.logout().then(res => {
-        console.log(res.data.data)
         if (res.data.data) {
           localStorage.clear()
           this.setLogin(false)
@@ -27,8 +26,6 @@ export default {
   }
 }
 </script>
-
-
 
 <style lang="less" scoped>
 Header {

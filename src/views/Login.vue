@@ -46,7 +46,7 @@ export default {
         message: '您已登录！',
         type: 'success'
       });
-      this.$router.push('/admin')
+      this.$router.push('/')
     }
   },
   computed: {
@@ -73,7 +73,7 @@ export default {
             type: 'success'
           });
           localStorage.setItem('userId', res.data.data.id)
-          this.$router.push('/admin')
+          this.$router.push('/')
         }
       })
     }

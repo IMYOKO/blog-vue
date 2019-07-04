@@ -15,11 +15,11 @@
               <router-link to="/">首页</router-link>
             </span>
           </el-menu-item>
-          <el-menu-item index="1">
+          <!-- <el-menu-item index="1">
             <span slot="title">
               <router-link to="/admin">我的博客</router-link>
             </span>
-          </el-menu-item>
+          </el-menu-item> -->
         </el-menu>
       </el-aside>
       <el-container>

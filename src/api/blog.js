@@ -15,7 +15,12 @@ class BlogApi extends BasicApi {
     return this.post('/api/user/new', data)
   }
   // 博客列表
-  blogList () {
+  blogList (author, keyword) {
+    if (author && keyword) {
+      return this.get(`/api/blog/list?isadmin=1&author=${author}&keyword=${keyword}`)
+    } else if (author) {
+      return this.get(`/api/blog/list?isadmin=1&author=${author}`)
+    }
     return this.get(`/api/blog/list?isadmin=1`)
   }
   // 博客详情

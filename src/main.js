@@ -4,7 +4,7 @@ import router from './router'
 import store from './store/index'
 import SERVER from './api/blog'
 import './assets/style/reset.css'
-import { Button, Container, Header, Aside, Main, Footer, Menu, MenuItem, Table, TableColumn, Form, FormItem, Input,Message } from 'element-ui';
+import { Button, Container, Header, Aside, Main, Footer, Menu, MenuItem, Table, TableColumn, Form, FormItem, Input, Message } from 'element-ui';
 
 Vue.config.productionTip = false
 Vue.prototype.SERVER = SERVER

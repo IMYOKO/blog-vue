@@ -8,12 +8,13 @@ Vue.use(Router)
 
 const router = new Router({
   routes: [
-    { path: '/', name: 'home',  component: Home },
+    { path: '/', name: 'home', meta: { login: true }, component: Home },
     { path: '/login', name: 'login', component: () => import(/* webpackChunkName: "about" */ './views/Login.vue') },
-    { path: '/admin', name: 'admin', meta: { login: true } , component: () => import(/* webpackChunkName: "about" */ './views/Admin.vue') },
-    { path: '/addblog', name: 'addblog', meta: { login: true } , component: () => import(/* webpackChunkName: "about" */ './views/AddBlog.vue') },
-    { path: '/adduser', name: 'adduser', meta: { login: true } , component: () => import(/* webpackChunkName: "about" */ './views/AddUser.vue') },
-    { path: '/updateblog', name: 'updateblog', meta: { login: true } , component: () => import(/* webpackChunkName: "about" */ './views/UpdateBlog.vue') }
+    { path: '/blogdetail', name: 'blogdetail', meta: { login: true }, component: () => import(/* webpackChunkName: "about" */ './views/BlogDetail.vue') },
+    // { path: '/admin', name: 'admin', meta: { login: true }, component: () => import(/* webpackChunkName: "about" */ './views/Admin.vue') },
+    { path: '/addblog', name: 'addblog', meta: { login: true }, component: () => import(/* webpackChunkName: "about" */ './views/AddBlog.vue') },
+    { path: '/adduser', name: 'adduser', meta: { login: true }, component: () => import(/* webpackChunkName: "about" */ './views/AddUser.vue') },
+    { path: '/updateblog', name: 'updateblog', meta: { login: true }, component: () => import(/* webpackChunkName: "about" */ './views/UpdateBlog.vue') }
   ]
 })
 
