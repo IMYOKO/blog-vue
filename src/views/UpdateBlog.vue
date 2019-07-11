@@ -58,7 +58,7 @@ export default {
             message: res.data.message,
             type: 'success'
           });
-          this.$router.push('/admin')
+          this.$router.push('/')
         }
       })
     }

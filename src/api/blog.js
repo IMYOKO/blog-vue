@@ -1,5 +1,6 @@
 import BasicApi from './index'
 import { Message } from 'element-ui'
+import router from '../router'
 
 // 用户模块
 class BlogApi extends BasicApi {
@@ -55,6 +56,9 @@ blogApi.$http.interceptors.response.use(response => {
     Message({ message: msg, type: 'error' })
     if (msg === '尚未登录') {
       localStorage.removeItem('userId')
+      router.beforeResolve((to, from, next) => {
+        next({ path: '/login' })
+      })
     }
   }
   return response;

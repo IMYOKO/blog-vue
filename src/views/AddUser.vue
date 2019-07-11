@@ -8,7 +8,7 @@
         <el-input type="password" v-model="ruleForm.password"></el-input>
       </el-form-item>
       <el-form-item label="确认密码" prop="password2">
-        <el-input type="password2" v-model="ruleForm.password2"></el-input>
+        <el-input type="password" v-model="ruleForm.password2"></el-input>
       </el-form-item>
       <el-form-item label="真实姓名" prop="realname">
         <el-input v-model="ruleForm.realname"></el-input>
